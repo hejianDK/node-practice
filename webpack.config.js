@@ -9,13 +9,13 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
-        contentBase: './app',
+        contentBase: './angular',
         port: 9999
     },
     entry: [
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://localhost:9999',
-        path.resolve(__dirname, 'app/main.js')
+        path.resolve(__dirname, 'angular/main.js')
     ],
     output: {
         path: __dirname + '/build',
@@ -27,11 +27,11 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader'},
+            {test: /\.css$/, include: path.resolve(__dirname, 'angular'), loader: 'style-loader!css-loader'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
             {
                 test: /\.js[x]?$/,
-                include: path.resolve(__dirname, 'app'),
+                include: path.resolve(__dirname, 'angular'),
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }

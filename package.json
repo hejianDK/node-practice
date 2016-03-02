@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app"
+    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base angular"
   },
   "dependencies": {
     "jquery-ui": "~1.10.4",
