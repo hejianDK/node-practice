@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app"
   },
   "dependencies": {
+    "jquery-ui": "~1.10.4",
     "angular": "~1.2.14"
   },
   "devDependencies": {

@@ -3,11 +3,10 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js">
     <script type="text/javascript" src="bundle.js"></script>
 </head>
 
-<body  ng-app="mySwitch" >
+<body ng-app="mySwitch" >
 <div class='row'><div class='col-md-10 col-md-offset-2'><img id="construction" src='construction.jpg'></div></div>
 <div ng-controller = 'switchCtrl'>
     <table id="bootstrap-overrides" class="table table-hover">
@@ -25,9 +24,11 @@
             <!--'state-power-suspended btn btn-default': vm.status !='powered on'||'Powered off'}">-->
             <!--</td>-->
             <td>
-                <input type="button" ng-class="{'state-power-on':vm.status ==='Powered on',
-                'state-power-off':vm.status =='Powered off',
-                'state-power-suspended': vm.status !=('Powered on'||'Powered off')}">
+                <input type="button" ng-class="{
+                'state-power-on':vm.status ==='Powered on',
+                'state-power-off':vm.status ==='Powered off',
+                'state-power-suspended': vm.status !=='Powered on'&& vm.status!=='Powered off'
+                }">
             </td>
             <th>anything</th>
         </tr>
