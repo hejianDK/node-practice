@@ -1,9 +1,92 @@
+<!DOCTYPE html>
 <html>
+
+<script data-require="angular-animate@*" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular-animate.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js">
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Node.js Practice</title>
+    <style>
+        .state-power-on {background-color: green; border-radius: 99em;}
+        .state-power-off {background-color: darkred; border-radius: 99em;}
+        .state-power-suspended {background-color: blue; border-radius: 99em;}
+
+
+        /*.glyphicon.glyphicon-globe {*/
+        /*font-size: 200px;*/
+        /*}*/
+        /*.animate-show.ng-hide {*/
+        /*opacity: 0;*/
+        /*}*/
+
+        @media (max-width:767px) {
+            #construction {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        @media (min-width:768px) and (max-width:991px) {
+            #construction {
+                margin-top: 200px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        @media (min-width:992px) and (max-width:1199px){
+            #construction {
+                margin-top: 100px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+    </style>
+    <script>
+        angular
+
+                .module('mySwitch',[])
+                .controller('switchCtrl',function ($scope) {
+                    $scope.names = [{name: 'n1...', status: 'Powered on'}, {name: 'n2...', status: 'Powered off'},
+                        {name: 'n3...', status: 'Powered on'}, {name: 'n4...', status: 'suspended'}];
+
+                })
+
+    </script>
 </head>
-<body>
-<script type="text/javascript" src="bundle.js"></script>
+
+<body  ng-app="mySwitch" >
+<div class='row'><div class='col-md-10 col-md-offset-2'><img id="construction" src='construction.png'></div></div>
+<div ng-controller = 'switchCtrl'>
+    <table id="bootstrap-overrides" class="table table-hover">
+        <tbody>
+        <tr>
+            <th>Name</th>
+            <th style="padding-right: 40px;" >Power</th>
+            <th>blah</th>
+        </tr>
+        <tr ng-repeat="vm in names">
+            <th>{{vm.name}}</th>
+            <!--<td id="powerStatus" style="margin-left: 5%;margin-top: 5%; opacity: 0.5;"-->
+            <!--ng-class = "{'state-power-on btn btn-success':vm.status==='Powered on',-->
+            <!--'state-power-off btn btn-danger': vm.status ==='Powered off',-->
+            <!--'state-power-suspended btn btn-default': vm.status !='powered on'||'Powered off'}">-->
+            <!--</td>-->
+            <td>
+                <input type="button" ng-class="{'state-power-on':vm.status ==='Powered on',
+                'state-power-off':vm.status =='Powered off',
+                'state-power-suspended': vm.status !=('Powered on'||'Powered off')}">
+            </td>
+            <th>anything</th>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
 </body>
+
 </html>
