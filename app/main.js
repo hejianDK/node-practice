@@ -1,5 +1,9 @@
-import getTime from './js/getTime';
+import angular from 'angular';
+import './main.css';
 
-setInterval(function() {
-    document.body.innerHTML = getTime();
-}, 1000);
+angular.module('mySwitch', [])
+    .controller('switchCtrl', function ($scope) {
+        $scope.names = [{name: 'n1...', status: 'Powered on'}, {name: 'n2...', status: 'Powered off'},
+            {name: 'n3...', status: 'Powered on'}, {name: 'n4...', status: 'suspended'}];
+
+    });

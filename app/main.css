@@ -1,0 +1,33 @@
+.state-power-on {background-color: green; border-radius: 99em;}
+.state-power-off {background-color: darkred; border-radius: 99em;}
+.state-power-suspended {background-color: blue; border-radius: 99em;}
+
+
+/*.glyphicon.glyphicon-globe {*/
+/*font-size: 200px;*/
+/*}*/
+/*.animate-show.ng-hide {*/
+/*opacity: 0;*/
+/*}*/
+
+@media (max-width:767px) {
+    #construction {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    #construction {
+        margin-top: 200px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    #construction {
+        margin-top: 100px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
