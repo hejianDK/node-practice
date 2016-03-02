@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app"
   },
   "dependencies": {
-
+     "angular":"~1.2.14",
   },
   "devDependencies": {
     "webpack": "~1.12.14",
@@ -18,7 +18,7 @@
     "css-loader": "~0.23.0",
     "style-loader": "~0.13.0",
     
-    "angular":"~1.2.14",
+   
     
     "es6-promise": "~3.1.2",
     "isomorphic-fetch": "~2.2.1",
