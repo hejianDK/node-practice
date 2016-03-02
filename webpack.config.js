@@ -28,6 +28,7 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader'},
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
             {
                 test: /\.js[x]?$/,
                 include: path.resolve(__dirname, 'app'),
